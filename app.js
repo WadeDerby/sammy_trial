@@ -1,17 +1,19 @@
-let input = Number(document.querySelector("#inputValue").value);
-let choose = document.querySelector("#choose").value;
-let convert = document.querySelector(".convert");
-let result = document.querySelector(".result");
-let answer;
-convert.addEventListener("click", (event) => {
-    event.preventDefault();
+let inputNode = document.querySelector("#inputValue"), // we have to fetch the nodes first
+    unitSelector = document.querySelector("#unit"),
+    convertBtn = document.querySelector(".convert"),
+    resultNode = document.querySelector(".result"),
+    inputValue = 0, //initialize the values to zero
+    unitValue = 0,  
+    result;
 
-    if (choose === "kg to g") {
-        answer = input / 1000;
+convertBtn.addEventListener("click", () => {
+    //on click is when you want to get the current values of the input and the unit selected
+    inputValue = Number(inputNode.value);
+    unitValue = Number(unitSelector.value);
+    if (unitValue === 1) {
+        result = inputValue / 1000;
+    } else {
+        result = inputValue * 1000;
     }
-    else {
-        answer = input * 1000;
-
-    }
-    result.innerHTML = answer;
+    resultNode.innerHTML = result;
 });
