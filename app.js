@@ -1,5 +1,5 @@
 let input = Number(document.querySelector("#inputValue").value);
-let choose = Number(document.querySelector("#choose").value);
+let choose = document.querySelector("#choose").value;
 let convert = document.querySelector(".convert");
 let result = document.querySelector(".result");
 let answer;
